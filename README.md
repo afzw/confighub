@@ -9,19 +9,22 @@
 
 ### 前置条件配置
 
-首先自行下载git（推荐使用系统的包管理工具）。
+- 首先自行下载git（推荐使用系统的包管理工具）。
 
-拉取本项目至${HOME}目录，易名本项目为`.config`，替换系统原有的`.config`目录。
+- 拉取本项目至${HOME}目录，易名本项目为`.config`，替换系统原有的`.config`目录。
+  ```sh
+  # 在${HOME}目录下
+  mv .config .config.bak # 将原来的.config目录备份
+  mv confighub .config
+  ```
 
 
 
-### 启动shell配置
-
-启动zsh配置。mac系统如下：
+### 启动`build.sh`脚本自动构建，使配置生效。
 
 ```sh
-# ${HOME}目录下
-source ~/.zhsrc
+# 在${HOME}目录下
+.config/build.sh
 ```
 
 

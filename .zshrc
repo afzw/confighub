@@ -115,12 +115,6 @@ alias tocellar="cd ~/cellar"
 alias tosd="cd ~/sd"
 alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/D"
 
-# --软连接 -----------------------------------------------------------------
-ln -s ~/.config/.zshrc ~/.zshrc
-ln -s ~/.config/.profile ~/.profile
-ln -s ~/.config/.bash_profile ~/.bash_profile
-ln -s ~/.config/.tmux.conf ~/.tmux.conf
-
 # ------------------------------------------- PATH(建议放在最后) -------------------------------------------
 export PATH=$PATH:/opt/homebrew/bin
 export NVM_DIR="$HOME/.nvm"

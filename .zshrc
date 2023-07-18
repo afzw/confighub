@@ -121,7 +121,6 @@ ln -s ~/.config/.profile ~/.profile
 ln -s ~/.config/.bash_profile ~/.bash_profile
 ln -s ~/.config/.tmux.conf ~/.tmux.conf
 
-
 # ------------------------------------------- PATH(建议放在最后) -------------------------------------------
 export PATH=$PATH:/opt/homebrew/bin
 export NVM_DIR="$HOME/.nvm"
@@ -129,6 +128,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 PATH=$(pyenv root)/shims:$PATH
 export PATH=$PATH:/Users/honglian/Library/Python/3.9/bin
-export PATH=$PATH:~/af-bin
+export PATH=$PATH:~/.config/.bin
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 

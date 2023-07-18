@@ -28,4 +28,6 @@ source ~/.zhsrc
 
 ## 其他
 
+`bin`目录下是一些自制的shell脚本。
+
 `.manual`目录下是手动维护的一些程序配置。

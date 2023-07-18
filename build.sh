@@ -4,4 +4,11 @@
 # 脚本只要发生错误，就终止执行（包括管道命令）
 set -euxo pipefail
 
+# 使zsh配置生效
 source ~/.config/.zshrc
+
+# 设置软链接
+ln -s ~/.config/.zshrc ~/.zshrc
+ln -s ~/.config/.profile ~/.profile
+ln -s ~/.config/.bash_profile ~/.bash_profile
+ln -s ~/.config/.tmux.conf ~/.tmux.conf

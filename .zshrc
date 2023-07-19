@@ -122,6 +122,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 PATH=$(pyenv root)/shims:$PATH
 export PATH=$PATH:/Users/honglian/Library/Python/3.9/bin
-export PATH=$PATH:~/.config/.bin
+export PATH=$PATH:~/.config/_bin
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 

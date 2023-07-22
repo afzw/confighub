@@ -110,7 +110,7 @@ alias mongodbstart="mongod --config /opt/homebrew/etc/mongod.conf --fork"
 # python default python3
 alias python="python3"
 alias pip="pip3"
-alias tohome="cd ~"
+alias toconfig="cd ~/.config"
 alias tocellar="cd ~/cellar"
 alias tosd="cd ~/sd"
 alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/D"

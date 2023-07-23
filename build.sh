@@ -5,10 +5,8 @@
 set -euxo pipefail
 
 # 使zsh配置生效
-source ~/.config/.zshrc
+source ~/.config/zsh/.zshrc
 
 # 设置软链接
-ln -s ~/.config/.zshrc ~/.zshrc
-ln -s ~/.config/.profile ~/.profile
-ln -s ~/.config/.bash_profile ~/.bash_profile
-ln -s ~/.config/.tmux.conf ~/.tmux.conf
+ln -s ~/.config/zsh/.zshrc ~/.zshrc
+ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf

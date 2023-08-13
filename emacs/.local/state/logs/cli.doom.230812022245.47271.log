@@ -1,0 +1,105 @@
+* 0.113383:*:cli:run!: doom install
+* 0.113538:*:cli:context-parse: found command (doom)
+* 0.113996:*:cli:load: autoload /Users/fanzhiwen/.config/emacs/lisp/cli/install.el
+* 0.114063:*:cli:load: ~/.config/emacs/lisp/cli/install.el nil
+* 0.114369:*:cli:load: ~/.config/emacs/lisp/cli/packages nil
+* 0.145334:*:cli:context-parse: found command (doom install)
+* 0.145843:*:cli:context-execute: doom install
+* 0.146309:*:cli:execute: (:before) ((input) (context . #s(doom-cli-context (25814 31861 487892 0) 47271 0 (80 . 24) nil nil doom nil nil (doom install) nil (install) ((--hooks) (--fonts) (--install) (--env) (--config) (--eval) (-E) (--strict-load) (--load) (-L) (--color) (--benchmark) (--profile) (--pager) (--emacsdir) (--doomdir) (--verbose) (-v) (--debug) (-D) (--force) (-!)) ((t) ((doom install)) ((doom) install))  *doom-cli stdin*  *doom-cli stdout*  *doom-cli stderr* nil)) (_) (evals) (loads) (color?) (bench?) (profile) (pager) (emacsdir) (doomdir) (verbose?) (debug?) (force?))
+* 0.146401:*:cli:execute: (doom install) ((context . #s(doom-cli-context (25814 31861 487892 0) 47271 0 (80 . 24) nil nil doom nil nil (doom install) nil (install) ((--hooks) (--fonts) (--install) (--env) (--config) (--eval) (-E) (--strict-load) (--load) (-L) (--color) (--benchmark) (--profile) (--pager) (--emacsdir) (--doomdir) (--verbose) (-v) (--debug) (-D) (--force) (-!)) ((t) ((doom install)) ((doom) install))  *doom-cli stdin*  *doom-cli stdout*  *doom-cli stderr* nil)) (hooks? . :yes) (fonts? . :yes) (install? . :yes) (envfile? . :yes) (config? . :yes))
+Installing Doom Emacs!
+
+- Skipping ~/.config/doom/ (already exists)
+  - Skipping init.el (already exists)
+  - Skipping config.el (already exists)
+  - Skipping packages.el (already exists)
+* 0.149826:*:cli:load: ~/.config/doom/init.el t
+- Envvar file already exists, skipping
+Installing plugins
+* 0.151330:*:cli:Initializing straight
+* 0.151424::context: +packages (cli t)
+* 0.151468::context:module: =[0 -110 -110 :core nil nil nil]
+* 0.202755:*:cli:Initializing recipes
+* 0.206098:*:cli:Installing core packages
+* 0.206150:*:cli:Initializing package.el
+* 0.232368:*:cli:Initializing straight.el
+* 0.232633::context: +packages (cli t)
+* 0.232679::context:module: =[1 105 -105 :user nil nil nil]
+* 0.232965::context:module: =[2 -111 -111 :config use-package nil nil]
+* 0.233680::context:module: =[0 -110 -110 :core nil nil nil]
+* 0.244141::context:module: =[1 105 -105 :user nil nil nil]
+* 0.244446::context:module: =[32 0 0 :config default (+bindings +smartparens) nil]
+* 0.246220::context:module: =[32 0 0 :lang sh nil nil]
+* 0.247410::context:module: =[32 0 0 :lang org nil nil]
+* 0.261716::context:module: =[32 0 0 :lang markdown nil nil]
+* 0.263994::context:module: =[32 0 0 :lang emacs-lisp nil nil]
+* 0.268005::context:module: =[32 0 0 :os macos nil nil]
+* 0.269105::context:module: =[32 0 0 :tools magit nil nil]
+* 0.270875::context:module: =[32 0 0 :tools lookup nil nil]
+* 0.274646::context:module: =[32 0 0 :tools eval (+overlay) nil]
+* 0.275743::context:module: =[32 0 0 :checkers syntax nil nil]
+* 0.277573::context:module: =[32 0 0 :emacs vc nil nil]
+* 0.280712::context:module: =[32 0 0 :emacs undo nil nil]
+* 0.282393::context:module: =[32 0 0 :emacs electric nil nil]
+* 0.282460::context:module: =[32 0 0 :emacs dired nil nil]
+* 0.285051::context:module: =[32 0 0 :editor snippets nil nil]
+* 0.286560::context:module: =[32 0 0 :editor fold nil nil]
+* 0.288318::context:module: =[32 0 0 :editor file-templates nil nil]
+* 0.288985::context:module: =[32 0 0 :editor evil (+everywhere) nil]
+* 0.296894::context:module: =[32 0 0 :ui workspaces nil nil]
+* 0.297618::context:module: =[32 0 0 :ui vi-tilde-fringe nil nil]
+* 0.298302::context:module: =[32 0 0 :ui vc-gutter (+pretty) nil]
+* 0.299212::context:module: =[32 0 0 :ui popup (+defaults) nil]
+* 0.299275::context:module: =[32 0 0 :ui ophints nil nil]
+* 0.300213::context:module: =[32 0 0 :ui modeline nil nil]
+* 0.302087::context:module: =[32 0 0 :ui hl-todo nil nil]
+* 0.303122::context:module: =[32 0 0 :ui doom-dashboard nil nil]
+* 0.303212::context:module: =[32 0 0 :ui doom nil nil]
+* 0.304302::context:module: =[32 0 0 :completion vertico nil nil]
+* 0.308810::context:module: =[32 0 0 :completion company nil nil]
+* 0.310190::context:module: =[1 105 -105 :user nil nil nil]
+> Installing packages...
+  - No packages need to be installed
+Regenerating autoloads files
+> (Re)building profile in /Users/fanzhiwen/.config/emacs/.local/etc/@/...
+  > Deleting old init files...
+  > Generating 4 init files...
+  > Byte-compiling ~/.config/emacs/.local/etc/@init.29.el...
+  ✓ Built init.29.elc
+Deploying commit-msg and pre-push git hooks
+  * 1.039510:*:cli:call: (doom install) -> (doom ci deploy-hooks)
+  * 1.039669:*:cli:context-parse: found command (doom)
+  * 1.040083:*:cli:load: autoload /Users/fanzhiwen/.config/emacs/lisp/cli/ci.el
+  * 1.040146:*:cli:load: ~/.config/emacs/lisp/cli/ci.el nil
+  * 1.048999:*:cli:context-parse: found command (doom ci)
+  * 1.049490:*:cli:context-parse: found command (doom ci deploy-hooks)
+  * 1.049983:*:cli:context-execute: doom ci deploy-hooks
+  * 1.050486:*:cli:execute: (:before) ((input) (context . #s(doom-cli-context (25814 31861 487892 0) 47271 0 (80 . 24) nil nil doom nil nil (doom ci deploy-hooks) nil (install) ((--hooks) (--fonts) (--install) (--env) (--config) (--eval) (-E) (--strict-load) (--load) (-L) (--color) (--benchmark) (--profile) (--pager) (--emacsdir) (--doomdir) (--verbose) (-v) (--debug) (-D) (--force) (-!)) ((t) ((doom ci deploy-hooks)) ((doom ci) deploy-hooks) ((doom) ci deploy-hooks))  *doom-cli stdin*  *doom-cli stdout*  *doom-cli stderr* nil)) (_) (evals) (loads) (color?) (bench?) (profile) (pager) (emacsdir) (doomdir) (verbose?) (debug?) (force?))
+  * 1.050563:*:cli:execute: (doom ci deploy-hooks) ((force))
+    ✓ Created ~/.config/.git/hooks/commit-msg
+    ✓ Created ~/.config/.git/hooks/pre-push
+✓  Finished! Doom is ready to go!
+
+But before you doom yourself, here are some things you should know:
+
+1. Don't forget to run 'doom sync', then restart Emacs, after modifying init.el
+   or packages.el in ~/.config/doom.
+
+   This command ensures needed packages are installed, orphaned packages are
+   removed, and your autoloads/cache files are up to date. When in doubt, run
+   'doom sync'!
+
+2. If something goes wrong, run `doom doctor`. It diagnoses common issues with
+   your environment and setup, and may offer clues about what is wrong.
+
+3. Use 'doom upgrade' to update Doom. Doing it any other way will require
+   additional steps. Run 'doom help upgrade' to understand those extra steps.
+
+4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h'
+   (or 'M-x doom/help')
+
+Have fun!
+
+* 6.417077:*:cli:Finished (GCs: 1, elapsed: 0.008242s)
+* 6.417077:*:cli:Finished (GCs: 1, elapsed: 0.008242s)
+✓ Finished in 6.41716s

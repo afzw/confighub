@@ -1,0 +1,1 @@
+/Users/fanzhiwen/.config/emacs/.local/straight/repos/marginalia/marginalia.el

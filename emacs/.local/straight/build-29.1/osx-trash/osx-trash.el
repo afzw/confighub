@@ -1,0 +1,1 @@
+/Users/fanzhiwen/.config/emacs/.local/straight/repos/osx-trash/osx-trash.el

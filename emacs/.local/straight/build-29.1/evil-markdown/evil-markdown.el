@@ -1,0 +1,1 @@
+/Users/fanzhiwen/.config/emacs/.local/straight/repos/evil-markdown/evil-markdown.el

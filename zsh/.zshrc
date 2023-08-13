@@ -119,7 +119,7 @@ alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/D"
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:~/.config/_bin
 export PATH=$PATH:~/.config/emacs/bin
-export PATH=$PATH:/usr/local/apache-maven-3.9.4 # maven
+export PATH=$PATH:/usr/local/apache-maven-3.9.4/bin # maven
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

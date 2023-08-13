@@ -8,7 +8,6 @@
 (setq consult--buffer-history '("secret.mdøˆ€€‚"))
 (setq file-name-history '("~/Documents/D/lib/resources/body.md" "~/Documents/D/lib/resources/secret.md" "~/.config/README.md"))
 (setq evil-jumps-history '((63 "/Users/fanzhiwen/Documents/D/lib/resources/secret.md")))
-(setq projectile-project-command-history '#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ()))
 (setq kill-ring '("d" "f" "s" "a" "f" "sdsd
 " "
 " "asdf

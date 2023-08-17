@@ -4,10 +4,24 @@
 -- 设置leader key
 --vim.g.mapleader = " "
 --vim.g.maplocalleader = "\"
+
 -- 设置别名，便于后续设置
-local map = vim.api.nvim_set_keymap
+local function map(mode, lhs, rhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    if opts.remap and not vim.g.vscode then
+      opts.remap = nil
+    end
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
+end
 -- 复用参数
 local opt = { noremap = true, silent = true }
+
 --- 系统剪切板的复制/粘贴（vim需要支持clipboard功能）
 map("n", "<C-A-y>", '"+y', opt)
 map("n", "<C-A-p>", '"*p', opt)

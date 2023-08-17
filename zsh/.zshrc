@@ -114,6 +114,7 @@ alias toconfig="cd ~/.config"
 alias tocellar="cd ~/cellar"
 alias tosd="cd ~/sd"
 alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/D"
+alias tow="cd ~/W"
 
 # ------------------------------------------- PATH(建议放在最后) -------------------------------------------
 export PATH=$PATH:/opt/homebrew/bin

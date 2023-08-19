@@ -374,7 +374,7 @@ Return a list of PACKAGE's dependencies.
 
 (fn &optional PACKAGE)" t)
 (autoload 'straight-dependents "straight" "\
-Return a list PACKAGE's dependents.
+Return a list of PACKAGE's dependents.
 
 (fn &optional PACKAGE)" t)
 

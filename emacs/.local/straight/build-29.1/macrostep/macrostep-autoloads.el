@@ -12,12 +12,11 @@
 (autoload 'macrostep-mode "macrostep" "\
 Minor mode for inline expansion of macros in Emacs Lisp source buffers.
 
-\\<macrostep-keymap>Progressively expand macro forms with \\[macrostep-expand], collapse them with \\[macrostep-collapse],
-and move back and forth with \\[macrostep-next-macro] and \\[macrostep-prev-macro].
-Use \\[macrostep-collapse-all] or collapse all visible expansions to
-quit and return to normal editing.
+\\<macrostep-mode-map>Progressively expand macro forms with \\[macrostep-expand], collapse them with \\[macrostep-collapse],
+and move back and forth with \\[macrostep-next-macro] and \\[macrostep-prev-macro].  Use \\[macrostep-collapse-all] or collapse all
+visible expansions to quit and return to normal editing.
 
-\\{macrostep-keymap}
+\\{macrostep-mode-map}
 
 This is a minor mode.  If called interactively, toggle the
 `Macrostep mode' mode.  If the prefix argument is positive,
@@ -38,7 +37,7 @@ it is disabled.
 Expand the macro form following point by one step.
 
 Enters `macrostep-mode' if it is not already active, making the
-buffer temporarily read-only. If macrostep-mode is active and the
+buffer temporarily read-only.  If `macrostep-mode' is active and the
 form following point is not a macro form, search forward in the
 buffer and expand the next macro form found, if any.
 

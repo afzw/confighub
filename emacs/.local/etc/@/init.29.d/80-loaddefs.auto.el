@@ -564,12 +564,13 @@ synchronously without sacrificing their output.
 
 Warning: freezes indefinitely on any stdin prompt.
 
-(fn COMMAND &rest ARGS)")(defvar projectile-project-root nil)(defvar projectile-enable-caching (not noninteractive))(defvar projectile-require-project-root 'prompt)(autoload 'project-file-exists-p! "~/.config/emacs/lisp/lib/projects" "Checks if the project has the specified FILES.
-Paths are relative to the project root, unless they start with ./ or ../ (in
-which case they're relative to `default-directory'). If they start with a slash,
-they are absolute.
+(fn COMMAND &rest ARGS)")(defvar projectile-project-root nil)(defvar projectile-enable-caching (not noninteractive))(defvar projectile-require-project-root 'prompt)(autoload 'project-file-exists-p! "~/.config/emacs/lisp/lib/projects" "Checks if FILES exist at the current project's root.
 
-(fn FILES)" nil t)(autoload 'doom/find-file-in-other-project "~/.config/emacs/lisp/lib/projects" "Performs `projectile-find-file' in a known project of your choosing.
+The project's root is determined by `projectile', starting from BASE-DIRECTORY
+(defaults to `default-directory'). FILES are paths relative to the project root,
+unless they begin with a slash.
+
+(fn FILES &optional BASE-DIRECTORY)" nil t)(autoload 'doom/find-file-in-other-project "~/.config/emacs/lisp/lib/projects" "Performs `projectile-find-file' in a known project of your choosing.
 
 (fn PROJECT-ROOT)" t)(autoload 'doom/browse-in-other-project "~/.config/emacs/lisp/lib/projects" "Performs `find-file' in a known project of your choosing.
 
@@ -643,7 +644,11 @@ If prefix ARG, delete all persistent scratches.
 
 (fn &optional FILE)")(autoload 'doom-load-session "~/.config/emacs/lisp/lib/sessions" "TODO
 
-(fn &optional FILE)")(autoload 'doom/quickload-session "~/.config/emacs/lisp/lib/sessions" "TODO" t)(autoload 'doom/quicksave-session "~/.config/emacs/lisp/lib/sessions" "TODO" t)(autoload 'doom/load-session "~/.config/emacs/lisp/lib/sessions" "TODO
+(fn &optional FILE)")(autoload 'doom/quickload-session "~/.config/emacs/lisp/lib/sessions" "Load the last session saved.
+If the FORCE \\[universal-argument] is provided
+then no confirmation is asked.
+
+(fn FORCE)" t)(autoload 'doom/quicksave-session "~/.config/emacs/lisp/lib/sessions" "TODO" t)(autoload 'doom/load-session "~/.config/emacs/lisp/lib/sessions" "TODO
 
 (fn FILE)" t)(autoload 'doom/save-session "~/.config/emacs/lisp/lib/sessions" "TODO
 

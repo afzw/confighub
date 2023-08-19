@@ -4,13 +4,11 @@
 ;; variables scraped from your default shell (based on your settings for 
 ;; `doom-env-allow' and `doom-env-deny').
 ;;
-;; It is NOT safe to edit this file. Changes will be overwritten next time you
-;; run 'doom sync'. To create a safe-to-edit envvar file use:
+;; This file is safe to edit by hand, but needs to be loaded manually with:
 ;;
-;;   doom env -o ~/.doom.d/myenv
+;;   (doom-load-envvars-file "path/to/this/file")
 ;;
-;; And load it with (doom-load-envvars-file "~/.doom.d/myenv").
-
+;; Use 'doom env -o path/to/this/file' to regenerate it.
 ("_=/usr/local/bin/emacs"
  "COLORTERM=truecolor"
  "RUBYMINE_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/rubymine.vmoptions"
@@ -32,14 +30,14 @@
  "XPC_SERVICE_NAME=0"
  "DATASPELL_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/dataspell.vmoptions"
  "WEBSTORM_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/webstorm.vmoptions"
- "TMUX_PANE=%0"
+ "TMUX_PANE=%8"
  "XPC_FLAGS=0x0"
  "ITERM_PROFILE=afzw"
  "CLION_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/clion.vmoptions"
  "IDEA_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/idea.vmoptions"
  "LANG=zh_CN.UTF-8"
  "DEVECOSTUDIO_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/devecostudio.vmoptions"
- "PATH=/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/sbin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/honglian/Library/Python/3.9/bin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/honglian/Library/Python/3.9/bin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/fanzhiwen/.config/emacs/bin:/Users/honglian/Library/Python/3.9/bin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/fanzhiwen/.config/emacs/bin:/Users/honglian/Library/Python/3.9/bin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/fanzhiwen/.config/emacs/bin:/Users/honglian/Library/Python/3.9/bin"
+ "PATH=/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/shims:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/sbin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/honglian/Library/Python/3.9/bin:/opt/homebrew/bin:/Users/fanzhiwen/.config/_bin:/Users/fanzhiwen/.config/emacs/bin:/usr/local/apache-maven-3.9.4/bin:/Users/honglian/Library/Python/3.9/bin"
  "LSCOLORS=Gxfxcxdxbxegedabagacad"
  "TMUX=/private/tmp/tmux-501/default,3482,0"
  "APPCODE_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/appcode.vmoptions"
@@ -50,6 +48,7 @@
  "LS_COLORS=di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
  "NVM_DIR=/Users/fanzhiwen/.nvm"
  "ZSH=/Users/fanzhiwen/.oh-my-zsh"
+ "LC_ALL=C.UTF-8"
  "TERM_SESSION_ID=w1t0p0:D70D1541-2FAF-4725-BA2E-BF5D1E658E20"
  "TERM_PROGRAM_VERSION=3.3a"
  "HOMEBREW_REPOSITORY=/usr/local/Homebrew"
@@ -59,7 +58,7 @@
  "SHELL=/bin/zsh"
  "NVM_CD_FLAGS=-q"
  "TERM_PROGRAM=tmux"
- "MANPATH=/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man:/usr/local/share/man:/usr/share/man:/usr/local/share/man:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man::"
+ "MANPATH=/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man:/usr/local/share/man:/usr/share/man:/usr/local/share/man:/Users/fanzhiwen/.nvm/versions/node/v16.17.0/share/man::"
  "PYCHARM_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/pycharm.vmoptions"
  "WEBIDE_VM_OPTIONS=/Users/fanzhiwen/jetbra/vmoptions/webide.vmoptions"
  "NVM_INC=/Users/fanzhiwen/.nvm/versions/node/v16.17.0/include/node"

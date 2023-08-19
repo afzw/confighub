@@ -28,51 +28,56 @@ running \"man git-rebase\" at the command line) for details.
 
 ;;; Generated autoloads from magit.el
 
-(define-obsolete-variable-alias 'global-magit-file-mode 'magit-define-global-key-bindings "\
-Magit 3.0.0")
-(defvar magit-define-global-key-bindings t "\
-Whether to bind some Magit commands in the global keymap.
+(defvar magit-define-global-key-bindings 'default "\
+Which set of key bindings to add to the global keymap, if any.
 
-If this variable is non-nil, then the following bindings may
-be added to the global keymap.  The default is t.
+This option controls which set of Magit key bindings, if any, may
+be added to the global keymap, even before Magit is first used in
+the current Emacs session.
 
-key             binding
----             -------
-C-x g           magit-status
-C-x M-g         magit-dispatch
-C-c M-g         magit-file-dispatch
+If the value is nil, no bindings are added.
 
-These bindings may be added when `after-init-hook' is run.
-Each binding is added if and only if at that time no other key
-is bound to the same command and no other command is bound to
-the same key.  In other words we try to avoid adding bindings
-that are unnecessary, as well as bindings that conflict with
-other bindings.
+If `default', maybe add:
 
-Adding the above bindings is delayed until `after-init-hook'
-is called to allow users to set the variable anywhere in their
-init file (without having to make sure to do so before `magit'
-is loaded or autoloaded) and to increase the likelihood that
-all the potentially conflicting user bindings have already
-been added.
+    C-x g     `magit-status'
+    C-x M-g   `magit-dispatch'
+    C-c M-g   `magit-file-dispatch'
+
+If `recommended', maybe add:
+
+    C-x g     `magit-status'
+    C-c g     `magit-dispatch'
+    C-c f     `magit-file-dispatch'
+
+    These bindings are strongly recommended, but we cannot use
+    them by default, because the \"C-c <LETTER>\" namespace is
+    strictly reserved for bindings added by the user.
+
+The bindings in the chosen set may be added when
+`after-init-hook' is run.  Each binding is added if, and only
+if, at that time no other key is bound to the same command,
+and no other command is bound to the same key.  In other words
+we try to avoid adding bindings that are unnecessary, as well
+as bindings that conflict with other bindings.
+
+Adding these bindings is delayed until `after-init-hook' is
+run to allow users to set the variable anywhere in their init
+file (without having to make sure to do so before `magit' is
+loaded or autoloaded) and to increase the likelihood that all
+the potentially conflicting user bindings have already been
+added.
 
 To set this variable use either `setq' or the Custom interface.
 Do not use the function `customize-set-variable' because doing
-that would cause Magit to be loaded immediately when that form
+that would cause Magit to be loaded immediately, when that form
 is evaluated (this differs from `custom-set-variables', which
 doesn't load the libraries that define the customized variables).
 
-Setting this variable to nil has no effect if that is done after
-the key bindings have already been added.
-
-We recommend that you bind \"C-c g\" instead of \"C-c M-g\" to
-`magit-file-dispatch'.  The former is a much better binding
-but the \"C-c <letter>\" namespace is strictly reserved for
-users; preventing Magit from using it by default.
-
-Also see info node `(magit)Commands for Buffers Visiting Files'.")
+Setting this variable has no effect if `after-init-hook' has
+already been run.")
 (custom-autoload 'magit-define-global-key-bindings "magit" t)
-(defun magit-maybe-define-global-key-bindings (&optional force) (when magit-define-global-key-bindings (let ((map (current-global-map))) (pcase-dolist (`(,key \, def) '(("C-x g" . magit-status) ("C-x M-g" . magit-dispatch) ("C-c M-g" . magit-file-dispatch))) (when (or force (not (or (lookup-key map (kbd key)) (where-is-internal def (make-sparse-keymap) t)))) (define-key map (kbd key) def))))))
+(defun magit-maybe-define-global-key-bindings (&optional force) "\
+See variable `magit-define-global-key-bindings'." (when magit-define-global-key-bindings (let ((map (current-global-map))) (pcase-dolist (`(,key \, def) (cond ((eq magit-define-global-key-bindings 'recommended) '(("C-x g" . magit-status) ("C-c g" . magit-dispatch) ("C-c f" . magit-file-dispatch))) ('(("C-x g" . magit-status) ("C-x M-g" . magit-dispatch) ("C-c M-g" . magit-file-dispatch))))) (when (or force (not (or (lookup-key map (kbd key)) (where-is-internal def (make-sparse-keymap) t)))) (define-key map (kbd key) def))))))
 (if after-init-time (magit-maybe-define-global-key-bindings) (add-hook 'after-init-hook #'magit-maybe-define-global-key-bindings t))
  (autoload 'magit-dispatch "magit" nil t)
  (autoload 'magit-run "magit" nil t)
@@ -113,23 +118,25 @@ is run in the top-level directory of the current working tree.
 (fn COMMAND)" t)
 (autoload 'magit-version "magit" "\
 Return the version of Magit currently in use.
-If optional argument PRINT-DEST is non-nil, output
-stream (interactively, the echo area, or the current buffer with
-a prefix argument), also print the used versions of Magit, Git,
-and Emacs to it.
+
+If optional argument PRINT-DEST is non-nil, also print the used
+versions of Magit, Transient, Git and Emacs to the output stream
+selected by that argument.  Interactively use the echo area, or
+with a prefix argument use the current buffer.  Additionally put
+the output in the kill ring.
 
 (fn &optional PRINT-DEST)" t)
 
 
 ;;; Generated autoloads from magit-apply.el
 
+(autoload 'magit-stage-buffer-file "magit-apply" "\
+Stage all changes to the file being visited in the current buffer." t)
 (autoload 'magit-stage-file "magit-apply" "\
-Stage all changes to FILE.
-With a prefix argument or when there is no file at point ask for
-the file to be staged.  Otherwise stage the file at point without
-requiring confirmation.
+Read one or more files and stage all changes in those files.
+With a prefix argument offer ignored files for completion.
 
-(fn FILE)" t)
+(fn FILES)" t)
 (autoload 'magit-stage-modified "magit-apply" "\
 Stage all changes to files modified in the worktree.
 Stage all new content of tracked files and remove tracked files
@@ -138,13 +145,12 @@ With a prefix argument also stage previously untracked (but not
 ignored) files.
 
 (fn &optional ALL)" t)
+(autoload 'magit-unstage-buffer-file "magit-apply" "\
+Unstage all changes to the file being visited in the current buffer." t)
 (autoload 'magit-unstage-file "magit-apply" "\
-Unstage all changes to FILE.
-With a prefix argument or when there is no file at point ask for
-the file to be unstaged.  Otherwise unstage the file at point
-without requiring confirmation.
+Read one or more files and unstage all changes to those files.
 
-(fn FILE)" t)
+(fn FILES)" t)
 (autoload 'magit-unstage-all "magit-apply" "\
 Remove all changes from the staging area." t)
 
@@ -260,14 +266,17 @@ changes.
 (git checkout REVISION).
 
 (fn REVISION &optional ARGS)" t)
+(function-put 'magit-checkout 'interactive-only 'magit--checkout)
 (autoload 'magit-branch-create "magit-branch" "\
 Create BRANCH at branch or revision START-POINT.
 
 (fn BRANCH START-POINT)" t)
+(function-put 'magit-branch-create 'interactive-only 'magit-call-git)
 (autoload 'magit-branch-and-checkout "magit-branch" "\
 Create and checkout BRANCH at branch or revision START-POINT.
 
 (fn BRANCH START-POINT &optional ARGS)" t)
+(function-put 'magit-branch-and-checkout 'interactive-only 'magit-call-git)
 (autoload 'magit-branch-or-checkout "magit-branch" "\
 Hybrid between `magit-checkout' and `magit-branch-and-checkout'.
 
@@ -281,6 +290,7 @@ branch.  This is similar to what `magit-branch-and-checkout'
 does.
 
 (fn ARG &optional START-POINT)" t)
+(function-put 'magit-branch-or-checkout 'interactive-only 'magit-call-git)
 (autoload 'magit-branch-checkout "magit-branch" "\
 Checkout an existing or new local branch.
 
@@ -306,6 +316,7 @@ value of `magit-branch-adjust-remote-upstream-alist', just like
 when using `magit-branch-and-checkout'.
 
 (fn BRANCH &optional START-POINT)" t)
+(function-put 'magit-branch-checkout 'interactive-only 'magit-call-git)
 (autoload 'magit-branch-orphan "magit-branch" "\
 Create and checkout an orphan BRANCH with contents from revision START-POINT.
 
@@ -365,9 +376,16 @@ that is being reset.
 (fn BRANCH TO &optional SET-UPSTREAM)" t)
 (autoload 'magit-branch-delete "magit-branch" "\
 Delete one or multiple branches.
+
 If the region marks multiple branches, then offer to delete
 those, otherwise prompt for a single branch to be deleted,
 defaulting to the branch at point.
+
+Require confirmation when deleting branches is dangerous in some
+way.  Option `magit-no-confirm' can be customized to not require
+confirmation in certain cases.  See its docstring to learn why
+confirmation is required by default in certain cases or if a
+prompt is confusing.
 
 (fn BRANCHES &optional FORCE)" t)
 (autoload 'magit-branch-rename "magit-branch" "\
@@ -545,7 +563,7 @@ The current time is used as the initial minibuffer input and the
 original author or committer date is available as the previous
 history element.
 
-Both the author and the committer dates are changes, unless one
+Both the author and the committer dates are changed, unless one
 of the following is true, in which case only the committer date
 is updated:
 - You are not the author of the commit that is being reshelved.
@@ -859,7 +877,7 @@ to be visited.
 
 Neither the blob nor the file buffer are killed when finishing
 the rebase.  If that is undesirable, then it might be better to
-use `magit-rebase-edit-command' instead of this command.
+use `magit-rebase-edit-commit' instead of this command.
 
 (fn FILE)" t)
 (autoload 'magit-reshelve-since "magit-extras" "\
@@ -895,8 +913,8 @@ stack.
 
 When reading the revision from the minibuffer, then it might not
 be possible to guess the correct repository.  When this command
-is called inside a repository (e.g. while composing a commit
-message), then that repository is used.  Otherwise (e.g. while
+is called inside a repository (e.g., while composing a commit
+message), then that repository is used.  Otherwise (e.g., while
 composing an email) then the repository recorded for the top
 element of the stack is used (even though we insert another
 revision).  If not called inside a repository and with an empty
@@ -1453,7 +1471,7 @@ refspec.
 (autoload 'magit-list-repositories "magit-repos" "\
 Display a list of repositories.
 
-Use the options `magit-repository-directories' to control which
+Use the option `magit-repository-directories' to control which
 repositories are displayed." t)
 
 
@@ -1721,15 +1739,15 @@ while two prefix arguments are equivalent to `--all'.
  (autoload 'magit-stash-push "magit-stash" nil t)
 (autoload 'magit-stash-apply "magit-stash" "\
 Apply a stash to the working tree.
-Try to preserve the stash index.  If that fails because there
-are staged changes, apply without preserving the stash index.
+If nothing is staged, then try to reinstate the stashed index.
+Doing so is not possible if there are staged changes.
 
 (fn STASH)" t)
 (autoload 'magit-stash-pop "magit-stash" "\
 Apply a stash to the working tree and remove it from stash list.
-Try to preserve the stash index.  If that fails because there
-are staged changes, apply without preserving the stash index
-and forgo removing the stash.
+If nothing is staged, then try to reinstate the stashed index.
+Doing so is not possible if there are staged changes.  Do not
+remove the stash, if it cannot be applied.
 
 (fn STASH)" t)
 (autoload 'magit-stash-drop "magit-stash" "\
@@ -1742,13 +1760,15 @@ Remove all stashes saved in REF's reflog by deleting REF.
 
 (fn REF)" t)
 (autoload 'magit-stash-branch "magit-stash" "\
-Create and checkout a new BRANCH from STASH.
+Create and checkout a new BRANCH from an existing STASH.
+The new branch starts at the commit that was current when the
+stash was created.  If the stash applies cleanly, then drop it.
 
 (fn STASH BRANCH)" t)
 (autoload 'magit-stash-branch-here "magit-stash" "\
-Create and checkout a new BRANCH and apply STASH.
-The branch is created using `magit-branch-and-checkout', using the
-current branch or `HEAD' as the start-point.
+Create and checkout a new BRANCH from an existing STASH.
+Use the current branch or `HEAD' as the starting-point of BRANCH.
+Then apply STASH, dropping it if it applies cleanly.
 
 (fn STASH BRANCH)" t)
 (autoload 'magit-stash-format-patch "magit-stash" "\
@@ -1811,7 +1831,9 @@ prefix arguments:
 
 (fn &optional DIRECTORY CACHE)" t)
 (defalias 'magit #'magit-status "\
-An alias for `magit-status' for better discoverability.
+Begin using Magit.
+
+This alias for `magit-status' exists for better discoverability.
 
 Instead of invoking this alias for `magit-status' using
 \"M-x magit RET\", you should bind a key to `magit-status'
@@ -1890,7 +1912,7 @@ These sections can be expanded to show the respective commits.")
 Insert sections for modules that haven't been pushed to the push-remote.
 These sections can be expanded to show the respective commits.")
 (autoload 'magit-list-submodules "magit-submodule" "\
-Display a list of the current repository's submodules." t)
+Display a list of the current repository's populated submodules." t)
 
 
 ;;; Generated autoloads from magit-subtree.el
@@ -1982,7 +2004,7 @@ or call the function `magit-wip-mode'.")
 (autoload 'magit-wip-mode "magit-wip" "\
 Save uncommitted changes to work-in-progress refs.
 
-Whenever appropriate (i.e. when dataloss would be a possibility
+Whenever appropriate (i.e., when dataloss would be a possibility
 otherwise) this mode causes uncommitted changes to be committed
 to dedicated work-in-progress refs.
 

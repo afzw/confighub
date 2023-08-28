@@ -11,3 +11,7 @@ Filezilla-server-gui
 
 clash
 configstore
+
+raycast/extensions/*
+cmus/*
+simple-update-notifier

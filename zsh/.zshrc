@@ -113,7 +113,8 @@ alias pip="pip3"
 alias toconfig="cd ~/.config"
 alias tocellar="cd ~/cellar"
 alias tosd="cd ~/sd"
-alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/D"
+alias toicloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/D"
 alias tow="cd ~/W"
 
 # ------------------------------------------- PATH(建议放在最后) -------------------------------------------

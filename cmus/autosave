@@ -54,7 +54,11 @@ set dsp.ao.buffer_size=16384
 set dsp.ao.device_interface=
 set dsp.ao.driver=
 set dsp.ao.wav_counter=1
+<<<<<<< HEAD
 set dsp.ao.wav_dir=/Users/fanzhiwen
+=======
+set dsp.ao.wav_dir=/Users/honglian
+>>>>>>> 9bdf5b3 (update tod)
 set dsp.coreaudio.device=
 set dsp.coreaudio.enable_hog_mode=false
 set dsp.coreaudio.sync_sample_rate=false
@@ -103,8 +107,13 @@ set show_all_tracks=true
 set show_current_bitrate=false
 set show_hidden=false
 set show_playback_position=true
+<<<<<<< HEAD
 set show_remaining_time=false
 set shuffle=off
+=======
+set show_remaining_time=true
+set shuffle=tracks
+>>>>>>> 9bdf5b3 (update tod)
 set skip_track_info=false
 set smart_artist_sort=true
 set softvol=false

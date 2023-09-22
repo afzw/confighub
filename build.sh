@@ -8,6 +8,7 @@ set -euxo pipefail
 set +e
 ln -s $(pwd)/zsh/.zshrc ~/.zshrc
 ln -s $(pwd)/tmux/.tmux.conf ~/.tmux.conf
+ln -s $(pwd)/doom ~/.doom.d
 set -e
 
 # 使zsh配置生效

@@ -1,1 +1,0 @@
-/Users/fanzhiwen/.config/emacs/.local/straight/repos/vertico/extensions/vertico-indexed.el

@@ -120,7 +120,7 @@ alias tow="cd ~/W"
 # ------------------------------------------- PATH(建议放在最后) -------------------------------------------
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:~/.config/_bin
-export PATH=$PATH:~/.config/emacs/bin
+export PATH=$PATH:~/.emacs.d/bin # doom emacs bin
 export PATH=$PATH:/usr/local/apache-maven-3.9.4/bin # maven
 export PATH=$PATH:/usr/local/mysql/bin # mysql
 export NVM_DIR="$HOME/.nvm"

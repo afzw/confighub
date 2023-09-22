@@ -103,13 +103,14 @@ source $ZSH/oh-my-zsh.sh
 # vim => nvim
 alias vi="nvim"
 alias vim="nvim"
-# git相关的封装指令，需要把af-bin项目拉取到指定的目录
-alias gsync="git-sync.sh"
+# 自定义命令
+alias gsync="git-sync.sh" # git 同步远程仓库（变基拉取 + 提交）
 # mongodbstart
 alias mongodbstart="mongod --config /opt/homebrew/etc/mongod.conf --fork"
 # python default python3
 alias python="python3"
 alias pip="pip3"
+# 目录跳转
 alias toconfig="cd ~/.config"
 alias tocellar="cd ~/cellar"
 alias tosd="cd ~/sd"

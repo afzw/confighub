@@ -100,9 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # -------------------------------------------- aliases --------------------------------------
-# vim => nvim
+# tool alias
 alias vi="nvim"
 alias vim="nvim"
+alias em="emacs -nw"
 # 自定义命令
 alias gsync="git-sync.sh" # git 同步远程仓库（变基拉取 + 提交）
 # mongodbstart

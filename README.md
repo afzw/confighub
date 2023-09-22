@@ -14,8 +14,10 @@
     git clone https://github.com/afzw/confighub.git ~/.config
     ````
 
+
 2. 执行`./build.sh`脚本，使配置生效。
 
+3. 参考本项目中的说明文档，安装相应的软件，调试配置。
 
 ## 目录说明
 

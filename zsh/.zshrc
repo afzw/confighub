@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # tool alias
 alias vi="nvim"
 alias vim="nvim"
-alias em="emacs -nw"
+alias em="emacs"
 # 自定义命令
 alias gsync="git-sync.sh" # git 同步远程仓库（变基拉取 + 提交）
 # mongodbstart

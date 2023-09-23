@@ -4,7 +4,7 @@
 
 ## 认识键盘
 
-![keyboard-87keys](./_assets/README/keyboard-87keys.jpeg)
+![keyboard-87keys](./_assets/shortcut/keyboard-87keys.jpeg)
 
 图中是一个经典的87键位的键盘。87键键盘是作者认为最适合程序员的键盘。
 

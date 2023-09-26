@@ -27,7 +27,6 @@ macos上最好也几乎是必备的包管理工具，使用macos的第一步往�
 
 一个管理zsh配置的框架。
 
-- 配置: `zsh/oh-my-zsh`
 - 官网: https://ohmyz.sh/
 
 ### nvim

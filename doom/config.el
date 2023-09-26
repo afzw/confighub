@@ -75,5 +75,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 ;;
-;; 全局键设置
+;; global key set
 (keyboard-translate ?\C-h ?\C-?)
+;; keymaps
+(map! :leader
+      :desc "reload doom"
+      "r" #'doom/reload)
+;; change the cursor style
+(setq evil-normal-state-cursor '(box)
+    evil-insert-state-cursor '(bar "medium sea green")
+    evil-visual-state-cursor '(box "orange"))

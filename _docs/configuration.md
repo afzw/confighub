@@ -20,9 +20,15 @@ macos上最好也几乎是必备的包管理工具，使用macos的第一步往�
 
 好用的shell程序
 
-- 配置: `.zshrc`
+- 配置: `zsh/zshrc`
 - 官网: https://ohmyz.sh/
 
+### oh-my-zsh
+
+一个管理zsh配置的框架。
+
+- 配置: `zsh/oh-my-zsh`
+- 官网: https://ohmyz.sh/
 
 ### nvim
 
@@ -39,17 +45,17 @@ emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配�
 > 安装doom前，要先安装emacs
 
 - emacs
-  - 配置: `~/.emacs.d`目录（需要克隆doom emacs项目到该目录，请参见doom emacs的文档安装emacs）
+  - 配置: `~/emacs.d`目录（需要克隆doom emacs项目到该目录，请参见doom emacs的文档安装emacs）
   - 官网: https://www.gnu.org/software/emacs/
 - doom
-  - 配置: `doom`
+  - 配置: `doom`目录
   - 官网: https://github.com/doomemacs/doomemacs
 
 ### tmux
 
 终端复用器。
 
-- 配置: `.tmux.conf`
+- 配置: `tmux.conf`
 - 官网: https://github.com/tmux/tmux
 
 

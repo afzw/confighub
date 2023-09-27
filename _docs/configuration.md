@@ -28,6 +28,7 @@ macos上最好也几乎是必备的包管理工具，使用macos的第一步往�
 一个管理zsh配置的框架。
 
 - 官网: https://ohmyz.sh/
+- 配置: 需要前去官网，手动下载，安装。
 
 ### nvim
 
@@ -37,14 +38,14 @@ macos上最好也几乎是必备的包管理工具，使用macos的第一步往�
 - 官网: https://neovim.io/
 
 
-### emacs (doom emacs)
+### emacs 
 
 emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配置框架。
 
 > 安装doom前，要先安装emacs
 
-- emacs
-  - 配置: `~/emacs.d`目录（需要克隆doom emacs项目到该目录，请参见doom emacs的文档安装emacs）
+- doom emacs (用作我们的emacs)
+  - 配置: `emacs`目录（git 子模块）
   - 官网: https://www.gnu.org/software/emacs/
 - doom
   - 配置: `doom`目录
@@ -56,6 +57,14 @@ emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配�
 
 - 配置: `tmux.conf`
 - 官网: https://github.com/tmux/tmux
+
+
+### asdf
+
+工具版本管理工具，一个工具管理多个工具（nodejs, python, ruby...）的版本。
+
+- 配置: asdf目录 (git 子模块)
+- 官网: https://asdf-vm.com/
 
 
 ### yabai

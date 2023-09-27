@@ -57,6 +57,8 @@ emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配�
 
 - 配置: `tmux.conf`
 - 官网: https://github.com/tmux/tmux
+- 插件管理: tpm
+  - 官网: https://github.com/tmux-plugins/tpm
 
 
 ### asdf
@@ -73,6 +75,7 @@ emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配�
 
 - 配置: `yabai`目录
 - 官网: https://github.com/koekeishiya/yabai
+- 插件管理: tmux
 
 
 ### skhd

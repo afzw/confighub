@@ -5,7 +5,7 @@
 set -euxo pipefail
 
 # 拉取子模块
-#git submodule update --init
+git submodule update --init
 
 # 设置软链接（某软连接设置失败，继续执行）
 set +e
@@ -13,6 +13,7 @@ ln -s $(pwd)/zsh/zshrc ~/.zshrc
 ln -s $(pwd)/tmux/tmux.conf ~/.tmux.conf
 ln -s $(pwd)/emacs ~/.emacs.d
 ln -s $(pwd)/doom ~/.doom.d
+ln -s $(pwd)/asdf ~/.asdf
 set -e
 
 # 使zsh配置生效

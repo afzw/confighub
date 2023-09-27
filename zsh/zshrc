@@ -98,6 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# -------------------------------------------- variables ------------------------------------
+#
+CONFIG_HOME="${HOME}/.config"
+#
 # -------------------------------------------- aliases --------------------------------------
 # tool alias
 alias vi="nvim"
@@ -118,15 +122,17 @@ alias toicloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs"
 alias tod="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/D"
 alias tow="cd ~/W"
 
-# ------------------------------------------- PATH(建议放在最后) -------------------------------------------
-export PATH=$PATH:/opt/homebrew/bin
-export PATH=$PATH:~/.config/_bin
-export PATH=$PATH:~/.emacs.d/bin # doom emacs bin
+# ------------------------------------------- PATH -------------------------------------------
+export PATH=$PATH:/opt/homebrew/bin # homebrew
 export PATH=$PATH:/usr/local/apache-maven-3.9.4/bin # maven
 export PATH=$PATH:/usr/local/mysql/bin # mysql
+export PATH=$PATH:$CONFIG_HOME/_bin # custom bins
+export PATH=$PATH:$CONFIG_HOME/emacs/bin #  emacs(doom emcas) bins
+export PATH=$PATH:$CONFIG_HOME/asdf # asdf bins
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=$PATH:/Users/honglian/Library/Python/3.9/bin
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
+# ---------------------------------------------- EXEC (final) ------------------------------------
+. "$CONFIG_HOME/asdf/asdf.sh" # source asdf

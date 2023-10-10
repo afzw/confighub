@@ -18,3 +18,5 @@ simple-update-notifier
 
 # doom emacs
 doom/doom
+
+**/*.rdb

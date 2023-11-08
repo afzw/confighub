@@ -129,9 +129,7 @@ export PATH=$PATH:/opt/homebrew/bin # homebrew
 export PATH=$PATH:/usr/local/apache-maven-3.9.4/bin # maven
 export PATH=$PATH:/usr/local/mysql/bin # mysql
 export PATH=$PATH:$CONFIG_HOME/_bin # custom bins
-export PATH=$PATH:$CONFIG_HOME/emacs/bin #  emacs(doom emcas) bins
-export PATH=$PATH:$CONFIG_HOME/asdf # asdf bins
+export PATH=$PATH:$HOME/.emacs.d/bin #  emacs(doom emcas) bins
+export PATH=$PATH:$HOME/.asdf/bin # asdf bins
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
-# ---------------------------------------------- EXEC (final) ------------------------------------
-. "$CONFIG_HOME/asdf/asdf.sh" # source asdf

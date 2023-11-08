@@ -45,9 +45,9 @@ emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配�
 > 安装doom前，要先安装emacs
 
 - doom emacs (用作我们的emacs)
-  - 配置: `emacs`目录（git 子模块）
+  - 配置: 根据官网提示，使用git拉取。
   - 官网: https://www.gnu.org/software/emacs/
-- doom
+- doom配置
   - 配置: `doom`目录
   - 官网: https://github.com/doomemacs/doomemacs
 
@@ -65,7 +65,7 @@ emacs是`GNU`计划下发起的一个巨集编辑器，doom是emacs的一个配�
 
 工具版本管理工具，一个工具管理多个工具（nodejs, python, ruby...）的版本。
 
-- 配置: asdf目录 (git 子模块)
+- 配置: 根据官网，使用git拉取。
 - 官网: https://asdf-vm.com/
 
 

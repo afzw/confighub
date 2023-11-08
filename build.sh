@@ -9,10 +9,9 @@ git submodule update
 
 # 设置软链接（某软连接设置失败，继续执行）
 set +e
-rm -rf ~/.zshrc ~/.tmux.conf ~/.emacs.d ~/.doom.d ~/.asdf
+rm -rf ~/.zshrc ~/.tmux.conf
 ln -s $(pwd)/zsh/zshrc ~/.zshrc
 ln -s $(pwd)/tmux/tmux.conf ~/.tmux.conf
-ln -s $(pwd)/asdf ~/.asdf
 set -e
 
 # 使zsh配置生效

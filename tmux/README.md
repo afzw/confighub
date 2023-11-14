@@ -11,3 +11,7 @@
 | P h/j/k/l               | 左下上右导航窗格                |
 | P H/J/K/L               | 左下右上伸/缩2单位长度          |
 | P >/<                   | 当前窗格和下个/上个窗格交换位置 |
+
+## 插件
+
+使用[tpm](https://github.com/tmux-plugins/tpm)管理tmux插件。

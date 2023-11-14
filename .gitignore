@@ -16,6 +16,9 @@ raycast/extensions/*
 cmus/*
 simple-update-notifier
 
+# tmux plugins
+tmux/plugins/*
+
 # doom emacs
 doom/doom
 

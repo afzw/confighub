@@ -1,0 +1,5 @@
+[opener]
+text = [{ exec = 'nvim "$@"', block = true }]
+
+[open]
+rules = [{ mime = "text/*", use = "text" }]

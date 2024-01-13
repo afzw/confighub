@@ -134,3 +134,11 @@ export PATH=$PATH:$HOME/.asdf/bin # asdf bins
 export PATH=$PATH:$HOME/.asdf/shims # asdf shims
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
+
+# pnpm
+export PNPM_HOME="/Users/afzw/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

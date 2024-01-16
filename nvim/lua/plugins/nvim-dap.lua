@@ -165,9 +165,11 @@ end, desc = "Widgets" },
             program = "${file}", -- the buffer you are focused on when running nvim-dap
           },
         },
-        c = dap.configurations.cpp,
-        rust = dap.configurations.cpp,
       }
+
+      dap.configurations.c = dap.configurations.cpp
+
+      dap.configurations.rust = dap.configurations.cpp
     end,
   },
 }
